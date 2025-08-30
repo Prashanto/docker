@@ -2,7 +2,7 @@ working_dir="/apps/prashanto/osb"
 
 JAVA_HOME="$working_dir/java"
 
-TAR_FILE="$working_dir/tmp/packages/jdk-8u451-linux-x64.tar.gz"
+TAR_FILE="$working_dir/tmp/packages/java/jdk-8u451-linux-x64.tar.gz"
 
 mkdir -p $JAVA_HOME
 
@@ -29,7 +29,7 @@ echo "export JAVA_HOME=$JAVA_HOME" >> ~/.bashrc
 echo "export PATH=$PATH" >> ~/.bashrc
 
 #Copy JCE files
-cp -f $working_dir/tmp/packages/local_policy.jar $working_dir/tmp/packages/US_export_policy.jar $jdk_home/jre/lib/security/
+cp -f $working_dir/tmp/packages/java/local_policy.jar $working_dir/tmp/packages/java/US_export_policy.jar $jdk_home/jre/lib/security/
 
 # Load the new profile settings
 source ~/.bash_profile
