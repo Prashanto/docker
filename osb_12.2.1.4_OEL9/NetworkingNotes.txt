@@ -2,10 +2,6 @@ layer 2 network
 	subnet
 	
 	
-	IPv4 Address. . . . . . . . . . . : 10.172.4.182
-   Subnet Mask . . . . . . . . . . . : 255.255.252.0
-   Default Gateway . . . . . . . . . : 10.172.4.0/22
-   
 
 firewall
 	RHEL9
