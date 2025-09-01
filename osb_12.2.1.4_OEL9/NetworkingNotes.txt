@@ -1,0 +1,35 @@
+layer 2 network
+	subnet
+	
+	
+	IPv4 Address. . . . . . . . . . . : 10.172.4.182
+   Subnet Mask . . . . . . . . . . . : 255.255.252.0
+   Default Gateway . . . . . . . . . : 10.172.4.0/22
+   
+
+firewall
+	RHEL9
+	
+	netsh
+	
+	port in and out through the firewall
+	
+	
+	sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+	sudo iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT (easy for manageability)
+	
+	
+OSB application (7001)  (input of 7001 and output on 1521) ->database(1521) (input on 1521)
+
+from the database:
+	sudo netstat -tulnp | grep 1521
+
+
+source server nc -zv ip port
+	example from OSB
+		source server nc -zv DB_IP 1521
+
+
+After firewall changes reload the firewall (otherwise it will not take effect)
+	firewall-cmd --reload
+	firewall-cmd --list-all
